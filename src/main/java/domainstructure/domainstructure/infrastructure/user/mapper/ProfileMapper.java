@@ -2,8 +2,9 @@ package domainstructure.domainstructure.infrastructure.user.mapper;
 
 import domainstructure.domainstructure.core.user.model.Profile;
 import domainstructure.domainstructure.infrastructure.user.entity.ProfileEntity;
+import lombok.experimental.UtilityClass;
 
-
+@UtilityClass
 public class ProfileMapper {
     public static ProfileEntity toEntity(Profile profile) {
         if (profile == null) {

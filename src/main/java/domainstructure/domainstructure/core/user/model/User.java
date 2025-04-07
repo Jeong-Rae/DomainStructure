@@ -4,7 +4,13 @@ import domainstructure.domainstructure.core.user.support.UserIDGenerator;
 import domainstructure.domainstructure.core.user.vo.Account;
 import domainstructure.domainstructure.core.user.vo.UserID;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 
+@Getter
+@EqualsAndHashCode
+@ToString
 public class User {
     private final Account account;
     private final Address address;

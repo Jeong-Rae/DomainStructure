@@ -3,6 +3,7 @@ package domainstructure.domainstructure.infrastructure.user.converter;
 import domainstructure.domainstructure.core.user.vo.City;
 import jakarta.persistence.AttributeConverter;
 
+
 public class CityConverter implements AttributeConverter<City, String> {
     @Override
     public String convertToDatabaseColumn(City attribute) {
