@@ -1,6 +1,6 @@
 package domainstructure.domainstructure.infrastructure.common.converter;
 
-import domainstructure.domainstructure.core.common.Email;
+import domainstructure.domainstructure.core.common.vo.Email;
 import jakarta.persistence.AttributeConverter;
 
 public class EmailConverter implements AttributeConverter<Email, String> {

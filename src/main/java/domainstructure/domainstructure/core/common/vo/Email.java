@@ -1,4 +1,4 @@
-package domainstructure.domainstructure.core.common;
+package domainstructure.domainstructure.core.common.vo;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

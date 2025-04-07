@@ -1,6 +1,6 @@
 package domainstructure.domainstructure.core.user.vo;
 
-import domainstructure.domainstructure.core.common.Email;
+import domainstructure.domainstructure.core.common.vo.Email;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;

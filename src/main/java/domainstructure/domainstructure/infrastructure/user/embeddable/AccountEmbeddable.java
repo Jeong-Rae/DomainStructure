@@ -1,6 +1,6 @@
 package domainstructure.domainstructure.infrastructure.user.embeddable;
 
-import domainstructure.domainstructure.core.common.Email;
+import domainstructure.domainstructure.core.common.vo.Email;
 import domainstructure.domainstructure.core.user.vo.Account;
 import domainstructure.domainstructure.core.user.vo.HashedPassword;
 import domainstructure.domainstructure.infrastructure.common.converter.EmailConverter;
