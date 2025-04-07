@@ -28,9 +28,4 @@ public class AccountEmbeddable {
     public static AccountEmbeddable of(final Account account) {
         return new AccountEmbeddable(account.getUsername(), account.getPassword());
     }
-
-    public Account toDomain() {
-        return Account.of(username, password);
-    }
-
 }
