@@ -10,13 +10,13 @@ import java.time.LocalDate;
 public class Profile {
     private final LocalDate birthday;
     private final Long id;
-    private final Nickname name;
+    private final Nickname nickname;
 
     @Builder(toBuilder = true)
-    private Profile(Long id, Nickname name, LocalDate birthday) {
-        validate(name, birthday);
+    private Profile(Long id, Nickname nickname, LocalDate birthday) {
+        validate(nickname, birthday);
         this.id = id;
-        this.name = name;
+        this.nickname = nickname;
         this.birthday = birthday;
     }
 
