@@ -1,5 +1,6 @@
 package domainstructure.domainstructure.infrastructure.user.repository;
 
+import domainstructure.domainstructure.core.common.vo.Email;
 import domainstructure.domainstructure.core.user.model.User;
 import domainstructure.domainstructure.core.user.repository.UserRepository;
 import domainstructure.domainstructure.infrastructure.user.entity.UserEntity;
@@ -16,5 +17,10 @@ public class UserRepositoryImpl implements UserRepository {
     public User save(User user) {
         UserEntity entity = UserMapper.toEntity(user);
         return UserMapper.toDomain(userJpaRepository.save(entity));
+    }
+
+    @Override
+    public boolean existsByEmail(Email email) {
+        return userJpaRepository.existsByEmail(email);
     }
 }
