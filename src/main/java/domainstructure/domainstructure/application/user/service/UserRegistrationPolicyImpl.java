@@ -12,11 +12,12 @@ public class UserRegistrationPolicyImpl implements UserRegistrationPolicy {
     private final UserRepository userRepository;
 
     @Override
-    public boolean canRegisterWith(Email email) {
-        return !isDuplicate(email);
+    public boolean isEmailDuplicated(Email email) {
+        return userRepository.existsByEmail(email);
     }
 
-    private boolean isDuplicate(Email email) {
-        return userRepository.existsByEmail(email);
+    @Override
+    public boolean isPasswordWeak(String rawPassword) {
+        return rawPassword != null && rawPassword.length() < 8 && !rawPassword.matches(".*\\d.*");
     }
 }

@@ -3,21 +3,38 @@ package domainstructure.domainstructure.application.exception;
 import org.springframework.http.HttpStatus;
 
 public class ApplicationException extends RuntimeException {
-    private HttpStatus httpStatus;
-    private String details;
+    private final String details;
+    private final ErrorCode errorCode;
 
-    public ApplicationException(String message) {
-        super(message);
+    public ApplicationException(ErrorCode errorCode) {
+        super(errorCode.getMessage());
+        this.errorCode = errorCode;
+        this.details = null;
     }
 
-    public ApplicationException(String message, HttpStatus httpStatus, String details) {
-        super(message);
-        this.httpStatus = httpStatus;
+    public ApplicationException(ErrorCode errorCode, String details) {
+        super(errorCode.getMessage());
+        this.errorCode = errorCode;
         this.details = details;
     }
 
-    public ApplicationException(String message, HttpStatus httpStatus) {
-        super(message);
-        this.httpStatus = httpStatus;
+    public String getMessage() {
+        return errorCode.getMessage();
+    }
+
+    public HttpStatus getHttpStatus() {
+        return errorCode.getStatus();
+    }
+
+    public String getCode() {
+        return errorCode.getCode();
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public ErrorCode getErrorCode() {
+        return errorCode;
     }
 }
