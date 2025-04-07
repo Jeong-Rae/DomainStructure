@@ -1,5 +1,7 @@
 package domainstructure.domainstructure.core.common;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -18,6 +20,7 @@ public class Email {
         this.value = value;
     }
 
+    @JsonCreator
     public static Email of(String value) {
         return new Email(value);
     }
@@ -35,6 +38,7 @@ public class Email {
     }
 
     @Override
+    @JsonValue
     public String toString() {
         return value;
     }
