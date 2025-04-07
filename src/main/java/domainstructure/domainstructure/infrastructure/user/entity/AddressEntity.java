@@ -27,14 +27,23 @@ public class AddressEntity {
     @Column(name = "zipcode")
     private String zipcode;
 
-    private AddressEntity(Long id, City city, String street, String zipcode) {
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
+    private AddressEntity(Long id, City city, String street, String zipcode, UserEntity user) {
         this.id = id;
         this.city = city;
         this.street = street;
         this.zipcode = zipcode;
+        this.user = user;
     }
 
     public static AddressEntity of(Long id, City city, String street, String zipcode) {
-        return new AddressEntity(id, city, street, zipcode);
+        return new AddressEntity(id, city, street, zipcode, null);
+    }
+
+    public void associateUser(UserEntity user) {
+        this.user = user;
     }
 }

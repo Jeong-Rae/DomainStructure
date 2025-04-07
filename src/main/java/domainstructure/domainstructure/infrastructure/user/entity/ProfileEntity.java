@@ -25,13 +25,22 @@ public class ProfileEntity {
     @Column(name = "birthday")
     private LocalDate birthday;
 
-    private ProfileEntity(Long id, Nickname nickname, LocalDate birthday) {
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
+    private ProfileEntity(Long id, Nickname nickname, LocalDate birthday, UserEntity user) {
         this.id = id;
         this.nickname = nickname;
         this.birthday = birthday;
+        this.user = user;
     }
 
     public static ProfileEntity of(Long id, Nickname nickname, LocalDate birthday) {
-        return new ProfileEntity(id, nickname, birthday);
+        return new ProfileEntity(id, nickname, birthday, null);
+    }
+
+    public void associateUser(UserEntity user) {
+        this.user = user;
     }
 }
