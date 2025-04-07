@@ -21,7 +21,7 @@ public class Email {
     }
 
     @JsonCreator
-    public static Email of(String value) {
+    public static Email of(final String value) {
         return new Email(value);
     }
 

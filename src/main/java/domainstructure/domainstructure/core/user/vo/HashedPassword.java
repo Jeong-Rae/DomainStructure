@@ -19,7 +19,7 @@ public class HashedPassword {
     }
 
     @JsonCreator
-    public static HashedPassword of(String value) {
+    public static HashedPassword of(final String value) {
         return new HashedPassword(value);
     }
 
