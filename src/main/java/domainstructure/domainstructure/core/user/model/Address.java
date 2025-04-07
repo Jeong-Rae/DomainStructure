@@ -8,9 +8,9 @@ import lombok.Getter;
 @Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Address {
+    private final City city;
     @EqualsAndHashCode.Include
     private final Long id;
-    private final City city;
     private final String street; // TODO: VO로 변경해야함 @Lyght.Kim
     private final String zipcode; // TODO: VO로 변경해야함 @Lyght.Kim
 
